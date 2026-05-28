@@ -1,0 +1,29 @@
+[project]
+name = "rlgym-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "rlgym-ppo",
+    "rlgym-sim",
+    "rlgym[all]>=2.0.1",
+    "rocketsim>=2.2.1",
+    "torch==2.12.0+cu132",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu132" }
+rlgym-sim = { git = "https://github.com/AechPro/rocket-league-gym-sim", rev = "main" }
+rlgym-ppo = { git = "https://github.com/AechPro/rlgym-ppo" }
+
+# 👇 Corrected field name and format for uv
+[tool.uv]
+override-dependencies = [
+    "torch==2.12.0+cu132",
+]
