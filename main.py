@@ -57,7 +57,7 @@ def build_rocketsim_env():
                         EventReward(touch=1),
                         VelocityBallToGoalReward()
                     )
-    reward_weights = (5, .01, 1, 50, .1)
+    reward_weights = (5, .001, 1, 50, .1)
 
     reward_fn = CombinedReward(reward_functions=rewards_to_combine,
                                reward_weights=reward_weights)
